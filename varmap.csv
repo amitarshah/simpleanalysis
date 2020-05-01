@@ -1,0 +1,12 @@
+table,origname,varname,dispname,comment
+dat01,low,low,Low Birthweight,Is birth weight < 2.5kg?
+dat01,age,age,Maternal Age (y),Mother’s age in years
+dat01,lwt,lwt,Maternal Weight (lbs),Mother’s weight in pounds at last menstrual period
+dat01,race,race,Race,Mother’s race
+dat01,smoke,smoke,Smoker,Smoking status during pregnancy
+dat01,ptl,ptl,Previous Premature Labors (#),Number of previous premature labors
+dat01,ht,ht,Hypertension,History of hypertension
+dat01,ui,ui,Uterine Irritability,Presence of uterine irritability
+dat01,ftv,ftv,First Trimester Visits,Number of visits during first trimester
+dat01,bwt,bwt,Birth Weight (g),Birth weight in grams
+note,note,note,note,"This is a reformatted copy of the ‘birthwt’ dataset from the ‘MASS’ R package. For more information, type ‘?MASS::birthwt’ in R"
