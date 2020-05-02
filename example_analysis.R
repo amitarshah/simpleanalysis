@@ -5,6 +5,7 @@
 #'   html_document:
 #'     toc: true
 #'     toc_float: true
+#'     toc_depth: 4
 #' ---
 #'
 #' ### Settings
@@ -82,9 +83,7 @@ pander(print(CreateTableOne(vars = mainvars, strata = binary_outcome[1]
              , printToggle=FALSE)
        ,caption='Cohort Characterization');
 #'
-#' ### Specify the statistical models
-#'
-#' #### Numeric outcome
+#' ### Fit the statistical models
 #'
 #' Formulas for the numeric outcome models.
 #+ numfrm, results='asis'
@@ -96,11 +95,12 @@ pander(cbind(num_formulas),justify='l');
 #' Linear regression models fitted to the above formulas.
 num_models <- sapply(num_formulas,function(xx) lm(xx,dat01) %>% update(.~.)
                      ,simplify=FALSE);
-#' The results of the univariate model fits
+
+#'
+#' #### Results of univariate numerical models (linear regression)
 #+ pandernum,results='asis'
 for(xx in num_models) {cat('***','\n'); cat(pander(xx)); cat('***','\n');};
 #'
-#' #### Binary outcome
 #'
 #' Formulas for the binary outcome models
 #+ binfrm, results='asis'
@@ -111,7 +111,7 @@ pander(cbind(bin_formulas),justify='l');
 #' Logistic regression models fitted to the above formulas.
 bin_models <- sapply(bin_formulas,function(xx){
   glm(xx,dat01,family='binomial') %>% update(.~.)},simplify=FALSE);
-#' The results of the univariate model fits
+#' #### Results of univariate binary models (logistic regression)
 #+ panderbin,results='asis'
 for(xx in bin_models) {cat('***','\n'); cat(pander(xx)); cat('***','\n');};
 #'
