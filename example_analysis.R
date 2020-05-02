@@ -118,9 +118,11 @@ for(xx in bin_models) {cat('***','\n'); cat(pander(xx)); cat('***','\n');};
 #'
 #' ### Save results
 #'
+#'
 #' Now the results are saved and available for use by other scriports if you
 #' place `r sprintf("\x60'%s'\x60",.currentscript)` among the values in their
 #' `.deps` variables.
 save(file=paste0(.currentscript,'.rdata'),list=setdiff(ls(),.origfiles));
 #+ echo=FALSE, results='hide'
+
 c()
